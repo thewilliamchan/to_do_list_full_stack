@@ -20,6 +20,10 @@ test:
   <<: *default
   database: db/to_do_list_fs_test.sqlite3
 
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
+
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: to_do_list_fs
