@@ -39,9 +39,9 @@ $(document).on("turbolinks:load", function () {
       $("#tasks").html(htmlString);
     });
   }
-});
 
-$(document).on("click", ".nav-link", function () {
-  $(".nav-link").removeClass("active");
-  $(this).addClass("active");
+  $(document).on("click", ".nav-link", function () {
+    $(".nav-link").removeClass("active");
+    $(this).addClass("active");
+  });
 });
