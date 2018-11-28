@@ -44,15 +44,3 @@ var indexCompletedTasks = function (response) {
     });
   }
 };
-
-$(".nav-link").click(function () {
-  $(".nav-link").removeClass("active");
-  $(this).addClass("active");
-  if $(".allTasks").hasClass("active") {
-    indexAllTasks(response);
-  } else if $(".activeTasks").hasClass("active") {
-    indexActiveTasks(response);
-  } else if $(".completedTasks").hasClass("active") {
-    indexCompletedTasks(response);
-  }
-});
