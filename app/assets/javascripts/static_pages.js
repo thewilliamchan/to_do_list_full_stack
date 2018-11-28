@@ -1,5 +1,5 @@
-$(document).on("turbolinks:load", function () {
-  if ($(".static_pages.index").length > 0 && $(".allTasks").hasClass("active")) {
+var indexAllTasks = function () {
+  if ($(".static_pages.index").length > 0) {
     indexTasks(function (response) {
       var htmlString = "";
       response.tasks.forEach(function (task) {
@@ -13,8 +13,10 @@ $(document).on("turbolinks:load", function () {
       $("#tasks").html(htmlString);
     });
   }
+};
 
-  if ($(".static_pages.index").length > 0 && $(".activeTasks").hasClass("active")) {
+var indexActiveTasks = function () {
+  if ($(".static_pages.index").length > 0) {
     indexTasks(function (response) {
       var htmlString = "";
       response.tasks.forEach(function (task) {
@@ -26,8 +28,10 @@ $(document).on("turbolinks:load", function () {
       $("#tasks").html(htmlString);
     });
   }
+};
 
-  if ($(".static_pages.index").length > 0 && $(".completedTasks").hasClass("active")) {
+var indexCompletedTasks = function () {
+  if ($(".static_pages.index").length > 0) {
     indexTasks(function (response) {
       var htmlString = "";
       response.tasks.forEach(function (task) {
@@ -39,9 +43,16 @@ $(document).on("turbolinks:load", function () {
       $("#tasks").html(htmlString);
     });
   }
+};
 
-  $(document).on("click", ".nav-link", function () {
-    $(".nav-link").removeClass("active");
-    $(this).addClass("active");
-  });
+$(document).on("click", ".nav-link", function () {
+  $(".nav-link").removeClass("active");
+  $(this).addClass("active");
+  if $(".allTasks").hasClass("active") {
+    indexAllTasks();
+  } else if $(".activeTasks").hasClass("active") {
+    indexActiveTasks();
+  } else if $(".completedTasks").hasClass("active") {
+    indexCompletedTasks();
+  }
 });
