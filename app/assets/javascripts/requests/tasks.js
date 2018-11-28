@@ -31,5 +31,35 @@ var postTask = function (content, successCB, errorCB) {
   $.ajax(request);
 };
 
-indexTasks();
-postTask('this is some task...');
+var markTaskComplete = function (taskId, successCB, errorCB) {
+  var request = {
+    type: 'PUT',
+    url: 'api/tasks/' + taskId + '/mark_complete?api_key=1',
+    success: successCB,
+    error: errorCB
+  }
+
+  $.ajax(request);
+};
+
+var markTaskActive = function (taskId, successCB, errorCB) {
+  var request = {
+    type: 'PUT',
+    url: 'api/tasks/' + taskId + '/mark_active?api_key=1',
+    success: successCB,
+    error: errorCB
+  }
+
+  $.ajax(request);
+};
+
+var deleteTask = function (taskId, successCB, errorCB) {
+  var request = {
+    type: 'DELETE',
+    url : 'api/tasks/' + taskId +'?api_key=1',
+    success: successCB,
+    error: errorCB
+  }
+
+  $.ajax(request);
+};

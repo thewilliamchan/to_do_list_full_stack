@@ -2,15 +2,21 @@
   <div class="row">
     <div class="col-12">
       <h1 class="text-center mt-4">To Do List</h1>
-      <ul class="nav nav-pills">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control toDoInput" placeholder="New to do item" aria-label="New to do item" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">Add</button>
+        </div>
+      </div>
+      <ul class="nav nav-pills mb-3">
         <li class="nav-item">
-          <a class="nav-link allTasks active" href="#">All</a>
+          <div class="nav-link allTasks active">All</div>
         </li>
         <li class="nav-item">
-          <a class="nav-link activeTasks" href="#">Active</a>
+          <div class="nav-link activeTasks">Active</div>
         </li>
         <li class="nav-item">
-          <a class="nav-link completedTasks" href="#">Completed</a>
+          <div class="nav-link completedTasks">Completed</div>
         </li>
       </ul>
       <div class="row" id="tasks"></div>
