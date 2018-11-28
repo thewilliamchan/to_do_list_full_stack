@@ -1,4 +1,4 @@
-var indexAllTasks = function () {
+var indexAllTasks = function (response) {
   if ($(".static_pages.index").length > 0) {
     indexTasks(function (response) {
       var htmlString = "";
@@ -15,7 +15,7 @@ var indexAllTasks = function () {
   }
 };
 
-var indexActiveTasks = function () {
+var indexActiveTasks = function (response) {
   if ($(".static_pages.index").length > 0) {
     indexTasks(function (response) {
       var htmlString = "";
@@ -30,7 +30,7 @@ var indexActiveTasks = function () {
   }
 };
 
-var indexCompletedTasks = function () {
+var indexCompletedTasks = function (response) {
   if ($(".static_pages.index").length > 0) {
     indexTasks(function (response) {
       var htmlString = "";
@@ -45,14 +45,14 @@ var indexCompletedTasks = function () {
   }
 };
 
-$(document).on("click", ".nav-link", function () {
+$(".nav-link").click(function () {
   $(".nav-link").removeClass("active");
   $(this).addClass("active");
   if $(".allTasks").hasClass("active") {
-    indexAllTasks();
+    indexAllTasks(response);
   } else if $(".activeTasks").hasClass("active") {
-    indexActiveTasks();
+    indexActiveTasks(response);
   } else if $(".completedTasks").hasClass("active") {
-    indexCompletedTasks();
+    indexCompletedTasks(response);
   }
 });
